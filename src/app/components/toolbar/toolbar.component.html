@@ -1,0 +1,24 @@
+<div class="bg-white rounded-2xl shadow-2xl px-6 py-4 mt-8 flex justify-between gap-3 items-center">
+  <div>
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
+      <input [(ngModel)]="newTask" type="text" nz-input placeholder="task" />
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzType="primary" (click)="addTask()">Add Task</button>
+    </ng-template>
+  </div>
+  <div class="flex items-center gap-3">
+    <nz-select (ngModelChange)="sort($event)" [(ngModel)]="filters.sort">
+      <nz-option nzValue="asc" nzLabel="asc"></nz-option>
+      <nz-option nzValue="desc" nzLabel="desc"></nz-option>
+    </nz-select>
+    <div>
+      <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+        <input [(ngModel)]="filters.search" type="text" nz-input placeholder="input search text" />
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button (click)="search()" nz-button nzType="primary" nzSearch><nz-icon nzType="search" /></button>
+      </ng-template>
+    </div>
+  </div>
+</div>

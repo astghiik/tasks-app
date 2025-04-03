@@ -1,0 +1,23 @@
+<div class="max-w-xl p-7 shadow-xl rounded-2xl mx-auto my-14 bg-white">
+  <h1 nz-typography>Login</h1>
+  <form nz-form [formGroup]="formData" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="email" nz-input formControlName="email" placeholder="Email" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+    Or
+    <a routerLink="/register">register now!</a>
+  </form>
+</div>
+ 

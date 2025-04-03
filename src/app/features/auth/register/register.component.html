@@ -1,0 +1,35 @@
+<div class="max-w-xl p-7 shadow-xl rounded-2xl mx-auto my-14 bg-white">
+  <h1 nz-typography>Register</h1>
+  <form nz-form nzLayout="vertical" [formGroup]="formData" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label nzFor="firstname" nzRequired>Firstname</nz-form-label>
+      <nz-form-control nzErrorTip="Please input firstname!">
+        <input nz-input id="firstname" formControlName="firstname" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="lastname" nzRequired>Lastname</nz-form-label>
+      <nz-form-control  nzErrorTip="Please input lastname!">
+        <input nz-input id="lastname" formControlName="lastname" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+      <nz-form-control nzErrorTip="The input is not valid E-mail!">
+        <input nz-input formControlName="email" id="email" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="password" nzRequired>Password</nz-form-label>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <input nz-input type="password" id="password" formControlName="password" />
+      </nz-form-control>
+    </nz-form-item> 
+    <nz-form-item class="register-area">
+      <nz-form-control>
+        <button nz-button nzType="primary">Register</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
+ 

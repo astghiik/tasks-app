@@ -1,0 +1,24 @@
+<app-toolbar (filter)="filter($event)"></app-toolbar>
+
+<div class="bg-white rounded-2xl shadow-2xl p-6 mt-8">
+  <ul *ngIf="filteredTasks" nz-list [nzDataSource]="filteredTasks" nzBordered nzSize="large">
+    <nz-list-header>
+      <a routerLink="/completed">See Completed Tasks <nz-icon nzType="right" /></a>
+    </nz-list-header>
+    @for (item of filteredTasks; track item.id) {
+      <li nz-list-item nzNoFlex>
+        <button (click)="completeTask(item.id)" nz-tooltip nzTooltipTitle="Mark as Done" class="!mr-4 hover:!text-green-600 cursor-pointer">
+          <nz-icon nzType="check-circle" nzTheme="outline" />
+        </button>
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <button (click)="removeTask(item.id)" nz-tooltip nzTooltipTitle="Delete" type="button" class="cursor-pointer !text-red-500">
+              <nz-icon nzType="delete" nzTheme="outline" />
+            </button>
+          </nz-list-item-action>
+        </ul>
+        {{ item.text }}
+      </li>
+    }
+  </ul>
+</div>
